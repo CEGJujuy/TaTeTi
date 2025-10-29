@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tres en Raya</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Tres en Raya</h1>
+      <div class="mode-selector">
+        <button id="pvpBtn" class="mode-btn active">2 Jugadores</button>
+        <button id="pvcBtn" class="mode-btn">vs IA</button>
+      </div>
+    </header>
+
+    <div class="scoreboard">
+      <div class="score-item">
+        <span class="player-label">X</span>
+        <span class="score" id="scoreX">0</span>
+      </div>
+      <div class="score-item">
+        <span class="player-label">Empates</span>
+        <span class="score" id="scoreDraw">0</span>
+      </div>
+      <div class="score-item">
+        <span class="player-label">O</span>
+        <span class="score" id="scoreO">0</span>
+      </div>
+    </div>
+
+    <div class="game-info">
+      <p id="turnInfo">Turno de: <span class="current-player">X</span></p>
+    </div>
+
+    <div class="board-container">
+      <div id="board" class="board">
+        <button class="cell" data-index="0"></button>
+        <button class="cell" data-index="1"></button>
+        <button class="cell" data-index="2"></button>
+        <button class="cell" data-index="3"></button>
+        <button class="cell" data-index="4"></button>
+        <button class="cell" data-index="5"></button>
+        <button class="cell" data-index="6"></button>
+        <button class="cell" data-index="7"></button>
+        <button class="cell" data-index="8"></button>
+      </div>
+      <svg class="winning-line" id="winningLine">
+        <line x1="0" y1="0" x2="0" y2="0" stroke="#10b981" stroke-width="8" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="controls">
+      <button id="resetBtn" class="btn-reset">Reiniciar Partida</button>
+      <button id="clearScoresBtn" class="btn-clear">Resetear Puntuación</button>
+    </div>
+
+    <div id="winModal" class="modal">
+      <div class="modal-content">
+        <h2 id="winMessage"></h2>
+        <button id="nextRoundBtn" class="btn-next">Siguiente Ronda</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
